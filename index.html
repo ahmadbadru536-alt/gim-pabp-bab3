@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pelita Berkah – PAI Kelas X Bab 3</title>
+<style>
+:root{--bg:#f2f8ef;--card:#fff;--tx:#1f2d24;--mu:#5d7064;--ac:#1f7a4d;--gd:#d9a21b;--ac2:#dff0e5;--ok:#1f7a4d;--no:#b3392f;--bd:#c9dccf;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121b16;--card:#1c2a22;--tx:#eaf4ec;--mu:#9db3a3;--ac:#4cc58a;--gd:#f0c04a;--ac2:#274435;--ok:#6fcf97;--no:#ff8a80;--bd:#3a5446}}
+:root[data-theme="dark"]{--bg:#121b16;--card:#1c2a22;--tx:#eaf4ec;--mu:#9db3a3;--ac:#4cc58a;--gd:#f0c04a;--ac2:#274435;--ok:#6fcf97;--no:#ff8a80;--bd:#3a5446}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}
+main{max-width:680px;margin:0 auto;padding:14px 14px 50px}
+h1{font-size:1.5rem;margin:.2rem 0}h2{font-size:1.1rem;margin:.2rem 0 .6rem}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:16px;margin:12px 0}
+.mu{color:var(--mu);font-size:.9rem}
+button{font:inherit;color:var(--tx);background:var(--card);border:1.5px solid var(--bd);border-radius:12px;padding:11px 13px;width:100%;text-align:left;cursor:pointer;margin:5px 0;touch-action:manipulation}
+button.pri{background:var(--ac);color:#fff;border-color:var(--ac);text-align:center;font-weight:600}
+button.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 20%,var(--card))}
+button.no{border-color:var(--no);background:color-mix(in srgb,var(--no) 20%,var(--card))}
+button.sel{border-color:var(--gd);background:color-mix(in srgb,var(--gd) 25%,var(--card));box-shadow:0 0 0 3px var(--gd)}
+button.done{opacity:.5}button:disabled{cursor:default}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:.9rem;gap:8px}
+.top b{flex:1}.sm{width:auto;padding:6px 10px;font-size:.85rem;margin:0}
+.bar{height:8px;background:var(--ac2);border-radius:8px;overflow:hidden;margin:8px 0}.bar i{display:block;height:100%;background:var(--ac);transition:width .3s}
+.fb{margin-top:10px;padding:10px 12px;border-radius:10px;background:var(--ac2);font-size:.92rem}
+.zn{display:flex;gap:12px;align-items:center}.zn .ic{font-size:2rem}
+.zn.lock{opacity:.5}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.grid button{text-align:center;margin:0;min-height:56px}
+.cat{border:2px dashed var(--bd);border-radius:12px;padding:8px;min-height:64px;margin:6px 0;background:var(--ac2)}
+.cat b{font-size:.9rem}.chip{display:inline-block;margin:4px 4px 0 0;padding:6px 10px;border-radius:10px;background:var(--card);border:1px solid var(--ok);font-size:.85rem}
+.item{touch-action:none;cursor:grab;position:relative;z-index:1;font-size:.92rem}.item.drag{z-index:9;opacity:.9}
+textarea{width:100%;min-height:70px;font:inherit;color:var(--tx);background:var(--bg);border:1.5px solid var(--bd);border-radius:12px;padding:9px;margin:4px 0 10px}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:16px;z-index:20}
+.ov .card{max-width:520px;margin:0}
+.bg{font-size:2.6rem;text-align:center}
+.rub{display:flex;gap:6px;align-items:center;margin:4px 0}.rub button{margin:0;text-align:center;padding:8px}
+ul{padding-left:1.1rem}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<script>
+var Z=[
+{n:"Lembah Foya-Foya",i:"🏞️",lb:"Penjaga Harta",pass:35,intro:"Kabut foya-foya menyelimuti lembah. Rakyat menghabiskan harta untuk hal sia-sia. Bantu mereka mengelola harta dengan bijak!",hk:"Berkah bukan ditentukan banyaknya harta, tetapi manfaat dan cara mengelolanya. Q.S. al-Isra’/17: 26–27 menyebut pemboros sebagai saudara setan. Utamakan kebutuhan, sisihkan untuk menabung dan berbagi.",qs:[
+{t:"pg",q:"Rina membeli lima gelas minuman sekaligus padahal hanya sanggup meminum satu, lalu sisanya dibuang. Perilaku ini paling tepat disebut…",o:["Qana’ah","Foya-foya (mubazir)","Zuhud","Tawakal"],k:1,e:"Itu foya-foya: menghambur-hamburkan harta untuk hal yang sia-sia."},
+{t:"pg",q:"Akibat paling nyata dari kebiasaan foya-foya adalah…",o:["Harta semakin berkah dan bertambah","Sulit menolong orang lain karena harta habis untuk hal sia-sia","Disayang semua orang","Terbebas dari utang"],k:1,e:"Harta habis untuk hal sia-sia sehingga sulit berbagi dan membantu."},
+{t:"pg",q:"Q.S. al-Isra’/17: 26–27 menyebut orang yang boros sebagai…",o:["Sahabat para nabi","Saudara setan","Orang yang pasti kaya","Penerima tambahan rezeki"],k:1,e:"Pemboros adalah saudara-saudara setan."},
+{t:"pgk",q:"Pilih SEMUA yang termasuk perilaku foya-foya:",o:["Membeli barang karena gengsi, bukan kebutuhan","Menyisihkan sebagian uang saku untuk ditabung","Menghabiskan uang untuk hiburan berlebihan hingga lupa kewajiban","Membeli perlengkapan sekolah sesuai anggaran","Membeli barang diskon yang tidak dibutuhkan karena “sayang kalau tidak dibeli”"],k:[0,2,4],e:"Jawaban benar: gengsi, hiburan berlebihan, dan beli barang tak dibutuhkan."}]},
+{n:"Hutan Seribu Topeng",i:"🎭",lb:"Pelepas Topeng",pass:42,intro:"Di hutan ini setiap orang memakai topeng agar dipuji. Lepaskan topeng riya dan sum’ah dengan meluruskan niat!",hk:"Ikhlas adalah beramal semata-mata karena Allah. Riya: beramal agar dilihat orang. Sum’ah: menceritakan amal agar didengar dan dipuji. Q.S. al-Baqarah/2: 264 mengingatkan agar sedekah tidak dirusak oleh pamer.",qs:[
+{t:"pg",q:"Bayu mau bersedekah, tetapi menunggu teman-temannya melihat dulu baru mengeluarkan uang. Sifat yang tampak pada Bayu adalah…",o:["Takabur","Riya","Hasad","Israf"],k:1,e:"Riya: beramal agar dilihat dan dipuji orang."},
+{t:"pg",q:"Setelah membantu korban banjir, Salsa menceritakannya ke banyak teman agar dipuji. Sifat ini disebut…",o:["Riya","Sum’ah","Hasad","Takabur"],k:1,e:"Sum’ah: memperdengarkan atau menceritakan amal agar didengar dan dipuji."},
+{t:"pgk",q:"Pilih SEMUA tindakan yang menjaga hati dari riya dan sum’ah:",o:["Meluruskan niat karena Allah sebelum beramal","Menyembunyikan sebagian amal sunah","Memperbanyak doa agar dijauhkan dari riya","Mengumumkan setiap amal supaya dinilai orang","Beramal hanya jika ada yang menonton"],k:[0,1,2],e:"Niat lurus, amal tersembunyi, dan doa menjaga hati."},
+{t:"tf",q:"Benar atau Salah?",s:[["Riya adalah beramal agar dilihat dan dipuji manusia.",true,"Benar."],["Sum’ah adalah menceritakan amal yang sudah dilakukan agar didengar dan dipuji.",true,"Benar."],["Mengunggah dokumentasi kegiatan sosial pasti riya, apa pun niatnya.",false,"Salah. Niat dan cara yang menentukan, misalnya untuk mengajak berbuat baik atau laporan kegiatan, sambil menjaga hati."],["Amal yang bercampur riya tetap bernilai sempurna jika jumlahnya banyak.",false,"Salah. Niat yang ikhlas menentukan nilai amal."]]}]},
+{n:"Menara Angkuh dan Kabut Iri",i:"🗼",lb:"Penakluk Menara",pass:56,intro:"Menara tinggi dikelilingi kabut iri. Siapa yang naik dengan sombong akan jatuh. Taklukkan takabur dan hasad dengan rendah hati!",hk:"Dalam hadis riwayat Muslim, takabur adalah menolak kebenaran dan meremehkan manusia. Hasad: tidak suka melihat nikmat orang lain dan berharap nikmat itu hilang. Obatnya: rendah hati, syukur, dan mendoakan kebaikan.",qs:[
+{t:"pg",q:"Menurut hadis riwayat Muslim, takabur adalah…",o:["Menolak kebenaran dan meremehkan manusia","Memiliki banyak harta","Berpakaian rapi","Berprestasi di sekolah"],k:0,e:"Takabur: menolak kebenaran dan meremehkan orang lain."},
+{t:"dnd",q:"Seret (atau ketuk lalu ketuk kategori) setiap situasi ke kategori yang tepat:",c:["Takabur","Hasad","Riya atau Sum’ah","Berlomba dalam kebaikan"],i:[["Menolak nasihat teman karena merasa paling pintar.",0],["Tidak senang melihat teman juara kelas dan berharap prestasinya hilang.",1],["Baru mau berinfak setelah ada yang memperhatikan.",2],["Berkata, “Kemarin aku sedekah satu juta lho,” agar dikagumi.",2],["Meremehkan teman karena orang tuanya sederhana.",0],["Melihat teman berprestasi, mendoakannya, lalu belajar lebih giat.",3]]},
+{t:"mt",q:"Jodohkan sifat dengan dalilnya (ketuk kiri, lalu kanan):",p:[["Foya-foya","Q.S. al-Isra’/17: 26–27"],["Riya","Q.S. al-Baqarah/2: 264"],["Takabur","Q.S. Luqman/31: 18"],["Hasad","Q.S. al-Falaq/113: 5"],["Sum’ah","Hadis Jundab (HR. Bukhari dan Muslim)"]]},
+{t:"or",q:"Urutkan langkah mengobati hasad (ketuk sesuai urutan, mulai dari yang pertama):",s:["Menyadari dan mengakui adanya rasa iri dalam hati","Memohon perlindungan kepada Allah dan berdoa agar hati bersih","Mendoakan kebaikan bagi orang yang membuat kita iri","Mensyukuri nikmat sendiri dan memperbaiki diri","Menjalin kebaikan dan silaturahmi dengan orang tersebut"]}]},
+{n:"Gerbang Benteng Berkah",i:"🏰",lb:"Pelita Berkah",pass:12,intro:"Raja Pencitraan menjaga gerbang. Hadapi dia dengan analisis yang tajam dan hati yang jernih. Boleh dikerjakan berkelompok.",hk:"",qs:[{t:"boss",cs:"Dimas, ketua OSIS, mengadakan bakti sosial “Berbagi untuk Negeri”. Ia memakai sebagian besar dana untuk dekorasi dan alat dokumentasi mahal, lalu mengunggah banyak foto dengan keterangan yang menonjolkan dirinya. Ketika pembina menyarankan agar dana dialihkan untuk kebutuhan penerima bantuan, Dimas menolak karena merasa paling berpengalaman. Ia juga tidak senang saat kegiatan kelas lain lebih viral dan diam-diam berharap kegiatan itu gagal.",
+q:["(Menganalisis) Tunjukkan sedikitnya empat sifat tercela pada kasus ini beserta buktinya.","(Menganalisis) Jelaskan bagaimana sifat-sifat itu saling memicu dan akibatnya pada keberkahan kegiatan.","(Mengevaluasi) Dimas berkata, “Yang penting kegiatannya bermanfaat.” Nilailah: apa yang benar dan apa yang keliru?","(Mencipta) Susun tiga langkah perbaikan untuk Dimas dan satu pesan santun untuk menasihatinya."],
+ex:"Foya-foya: dana besar untuk dekorasi dan alat dokumentasi. Riya dan sum’ah: unggahan yang menonjolkan diri. Takabur: menolak saran pembina. Hasad: berharap kegiatan kelas lain gagal. Rantai: ingin dikagumi → merasa paling hebat → tersaingi → boros demi citra. Evaluasi: manfaat itu penting, tetapi niat dan caranya ikut menentukan keberkahan. Solusi: luruskan niat, alihkan dana ke kebutuhan penerima, terima masukan, dukung kelas lain dan ucapkan selamat.",
+rub:["Ketepatan identifikasi sifat dan bukti","Kedalaman analisis hubungan antar sifat","Kualitas evaluasi (adil dan berdasar dalil atau nilai)","Kelayakan dan keteladanan solusi serta pesan"]}]}];
+var app=document.getElementById("app"),st,zi,qi,zs,hearts,pend,help,tm=0;
+function sh(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
+function el(h){app.innerHTML=h;window.scrollTo(0,0)}
+function gid(i){return document.getElementById(i)}
+function hr(){var s="";for(var i=0;i<3;i++)s+=i<hearts?"❤️":"🤍";return s}
+function top(t,p){return '<div class="top"><button class="sm" onclick="map()">🗺️ Peta</button><b>'+t+'</b><span>'+hr()+' ⭐ '+zs+'</span></div><div class="bar"><i style="width:'+p+'%"></i></div>'}
+function home(){st={total:0,badges:[],cur:0};
+el('<h1>🕌 Pelita Berkah</h1><div class="mu">PAI dan Budi Pekerti · Kelas X · Bab 3 · Hidup penuh berkah tanpa foya-foya, riya, sum’ah, takabur, dan hasad</div><div class="card"><p>Dahulu Negeri Barakah makmur dan damai. Lalu Penyihir Kabut Nafsu menyebarkan kabut foya-foya, topeng pamer, sombong, dan iri. Pelita Berkah meredup. Kamu, <b>Pelita Muda</b>, harus melewati 4 zona, mengumpulkan 3 Lentera Hati, dan mengalahkan Raja Pencitraan.</p><button class="pri" onclick="map()">Mulai petualangan</button><button onclick="guru()">📋 Panduan guru (90 menit)</button></div>')}
+function guru(){var d=document.createElement("div");d.className="ov";d.innerHTML='<div class="card" style="max-height:90vh;overflow:auto"><h2>Panduan Guru · 90 menit</h2><ul><li>0–10: pembukaan, cerita, dan pemantik “Kapan hidupmu terasa berkah?”</li><li>10–25: Zona 1 · 25–40: Zona 2 · 40–58: Zona 3 (individu atau tim 4–5 siswa)</li><li>58–78: Boss Battle berkelompok dan presentasi hasil</li><li>78–88: diskusi, refleksi, Janji Pelita · 88–90: penutup</li></ul><p><b>Aturan:</b> 3 hati per zona (salah PG, PGK, atau B/S mengurangi 1 hati). Jika hati habis, siswa membaca Kamar Hikmah dan hati kembali penuh. Syarat lulus zona: 35/50, 42/60, 56/80 poin. Boss: skor rubrik minimal 12 dari 16. Kartu Bantuan 1× per zona untuk soal PG (menghilangkan dua pilihan).</p><p class="mu">Catat skor tim di papan tulis. Gunakan tokoh fiksi untuk diskusi dan jangan melabeli siswa. Cocokkan dalil dengan buku siswa.</p><button class="pri" onclick="this.closest(\'.ov\').remove()">Tutup</button></div>';document.body.appendChild(d)}
+function map(){var h='<h1>🗺️ Peta Negeri Barakah</h1><div class="mu">Selesaikan zona secara berurutan.</div>';
+Z.forEach(function(z,i){var s=i<st.cur?"✅ Lulus":i==st.cur?"▶️ Main":"🔒 Terkunci";h+='<div class="card zn '+(i>st.cur?"lock":"")+'"><div class="ic">'+z.i+'</div><div style="flex:1"><b>Zona '+(i+1)+': '+z.n+'</b><div class="mu">'+(i<st.cur?"Lencana: "+z.lb:i==3?"Boss Battle HOTS":z.qs.length+" tantangan")+'</div></div>'+(i==st.cur?'<button class="pri sm" onclick="zone('+i+')">'+s+'</button>':'<span>'+s+'</span>')+'</div>'});
+el(h+'<div class="mu">Skor: '+st.total+' · Lencana: '+(st.badges.join(", ")||"belum ada")+'</div>')}
+function zone(i){zi=i;zs=0;hearts=3;help=1;pend=0;qi=0;var z=Z[i];
+el('<div class="card"><div class="bg">'+z.i+'</div><h2 style="text-align:center">Zona '+(i+1)+': '+z.n+'</h2><p>'+z.intro+'</p><button class="pri" onclick="ask()">Mulai misi</button></div>')}
+function ask(){var z=Z[zi],q=z.qs[qi],p=Math.round(qi/z.qs.length*100);tm=0;
+if(q.t=="pg")pg(q,p);else if(q.t=="pgk")pgk(q,p);else if(q.t=="tf")tf(q,p);else if(q.t=="dnd")dnd(q,p);else if(q.t=="mt")mt(q,p);else if(q.t=="or")or(q,p);else boss(q)}
+function fbk(txt,ok){gid("fb").innerHTML='<div class="fb">'+(ok===true?"✅ ":ok===false?"💡 ":"")+txt+'</div><button class="pri" onclick="nx()">Lanjut</button>';gid("fb").scrollIntoView({block:"nearest"})}
+function pen(){hearts--;if(hearts<=0)pend=1}
+function nx(){if(pend){pend=0;hearts=3;var d=document.createElement("div");d.className="ov";d.innerHTML='<div class="card"><h2>📖 Kamar Hikmah</h2><p>Hati habis. Baca dulu, lalu lanjutkan dengan hati penuh.</p><p>'+Z[zi].hk+'</p><button class="pri" id="kh">Paham, lanjut</button></div>';document.body.appendChild(d);gid("kh").onclick=function(){d.remove();adv()};return}adv()}
+function adv(){qi++;if(qi>=Z[zi].qs.length)zend();else ask()}
+function pg(q,p){var o=sh(q.o.map(function(t,i){return{t:t,c:i==q.k}}));var h=top("Zona "+(zi+1),p)+'<div class="card"><h2>'+q.q+'</h2>';
+o.forEach(function(x,i){h+='<button data-c="'+(x.c?1:0)+'">'+x.t+'</button>'});
+h+=(help?'<button class="sm" id="hp">💡 Kartu Bantuan (1×)</button>':'')+'<div id="fb"></div></div>';el(h);
+var bs=app.querySelectorAll("button[data-c]");bs.forEach(function(b){b.onclick=function(){var c=b.dataset.c=="1";bs.forEach(function(x){x.disabled=true;if(x.dataset.c=="1")x.classList.add("ok")});if(c){zs+=10;tm=1}else{b.classList.add("no");pen()}
+var hp=gid("hp");if(hp)hp.remove();fbk(q.e,c)}});
+var hp=gid("hp");if(hp)hp.onclick=function(){help=0;var w=[];bs.forEach(function(x){if(x.dataset.c=="0")w.push(x)});sh(w).slice(0,2).forEach(function(x){x.disabled=true;x.style.opacity=.3});hp.remove()}}
+function pgk(q,p){var o=sh(q.o.map(function(t,i){return{t:t,i:i}})),s={};var h=top("Zona "+(zi+1),p)+'<div class="card"><h2>'+q.q+'</h2>';
+o.forEach(function(x){h+='<button data-i="'+x.i+'">☐ '+x.t+'</button>'});h+='<button class="pri" id="ck">Periksa jawaban</button><div id="fb"></div></div>';el(h);
+var bs=app.querySelectorAll("button[data-i]");bs.forEach(function(b){b.onclick=function(){var i=b.dataset.i;s[i]=!s[i];b.classList.toggle("sel",!!s[i]);b.textContent=(s[i]?"☑ ":"☐ ")+q.o[i]}});
+gid("ck").onclick=function(){var r=0,w=0;bs.forEach(function(b){var i=+b.dataset.i,k=q.k.indexOf(i)>=0;b.disabled=true;if(s[i]){if(k){r++;b.classList.add("ok")}else{w++;b.classList.add("no")}}else if(k)b.classList.add("ok")});
+var pt=Math.max(0,Math.min(20,r*7-w*7));zs+=pt;this.remove();if(pt<20)pen();fbk("+"+pt+" poin. "+q.e,pt==20)}}
+function tf(q,p){var n=0,done=0;var h=top("Zona "+(zi+1),p)+'<div class="card"><h2>'+q.q+'</h2>';
+q.s.forEach(function(s,i){h+='<div style="margin:10px 0"><div>'+(i+1)+'. '+s[0]+'</div><div class="grid"><button data-i="'+i+'" data-v="1">Benar</button><button data-i="'+i+'" data-v="0">Salah</button></div><div class="mu" id="x'+i+'"></div></div>'});el(h+'<div id="fb"></div></div>');
+app.querySelectorAll("button[data-v]").forEach(function(b){b.onclick=function(){var i=+b.dataset.i,c=(b.dataset.v=="1")==q.s[i][1];app.querySelectorAll('button[data-i="'+i+'"]').forEach(function(x){x.disabled=true});b.classList.add(c?"ok":"no");if(c)zs+=5;else pen();gid("x"+i).textContent=(c?"✅ ":"💡 ")+q.s[i][2];done++;if(done==q.s.length)fbk("Selesai pernyataan B/S.")}})}
+function hit(x,y){var r=null;app.querySelectorAll(".cat").forEach(function(c){var b=c.getBoundingClientRect();if(x>b.left-12&&x<b.right+12&&y>b.top-12&&y<b.bottom+12)r=c});return r}
+function dnd(q,p){var sel=null,left=q.i.length,h=top("Zona "+(zi+1),p)+'<div class="card"><h2>'+q.q+'</h2>';
+q.c.forEach(function(c,i){h+='<div class="cat" data-c="'+i+'"><b>'+c+'</b><div></div></div>'});h+='<div id="pool"></div><div id="fb"></div></div>';el(h);
+function put(it,c){var k=+c.dataset.c;if(k==it.k){if(!it.w)zs+=5;it.el.remove();c.lastChild.insertAdjacentHTML("beforeend",'<span class="chip">'+it.t+'</span>');left--;sel=null;if(!left)fbk("Semua situasi sudah tepat. Perhatikan pembeda niat dan sikapnya.",true)}else{it.w=1;it.el.classList.add("no");setTimeout(function(){it.el.classList.remove("no")},600);gid("fb").innerHTML='<div class="fb">💡 Belum tepat. Pikirkan niat dan sikap pelakunya.</div>'}}
+sh(q.i).forEach(function(x){var b=document.createElement("button");b.className="item";b.textContent=x[0];var it={t:x[0],k:x[1],el:b};gid("pool").appendChild(b);
+b.onpointerdown=function(e){e.preventDefault();var sx=e.clientX,sy=e.clientY,mv=false;try{b.setPointerCapture(e.pointerId)}catch(z){}b.classList.add("drag");
+b.onpointermove=function(ev){var dx=ev.clientX-sx,dy=ev.clientY-sy;if(Math.hypot(dx,dy)>8)mv=true;if(mv)b.style.transform="translate("+dx+"px,"+dy+"px)"};
+b.onpointerup=function(ev){b.onpointermove=b.onpointerup=null;b.classList.remove("drag");b.style.transform="";if(mv){var c=hit(ev.clientX,ev.clientY);if(c)put(it,c)}else{app.querySelectorAll(".item").forEach(function(x){x.classList.remove("sel")});sel=it;b.classList.add("sel")}}}});
+app.querySelectorAll(".cat").forEach(function(c){c.onclick=function(){if(sel)put(sel,c)}})}
+function mt(q,p){var sl=null,left=q.p.length,L=sh(q.p.map(function(x,i){return{t:x[0],i:i}})),R=sh(q.p.map(function(x,i){return{t:x[1],i:i}})),h=top("Zona "+(zi+1),p)+'<div class="card"><h2>'+q.q+'</h2><div class="grid" id="g"></div><div id="fb"></div></div>';el(h);
+var g=gid("g"),bl=[],w={};
+for(var k=0;k<L.length;k++)[["L",L[k]],["R",R[k]]].forEach(function(a){var b=document.createElement("button");b.textContent=a[1].t;b.dataset.i=a[1].i;b.dataset.s=a[0];
+b.onclick=function(){if(b.classList.contains("done"))return;if(a[0]=="L"){bl.forEach(function(x){x.classList.remove("sel")});b.classList.add("sel");sl=b;return}if(!sl)return;var i=sl.dataset.i;
+if(i==b.dataset.i){if(!w[i])zs+=4;sl.classList.remove("sel");sl.classList.add("done","ok");b.classList.add("done","ok");sl=null;left--;if(!left)fbk("Semua pasangan tepat.",true)}else{w[i]=1;b.classList.add("no");setTimeout(function(){b.classList.remove("no")},500)}};
+if(a[0]=="L")bl.push(b);g.appendChild(b)})}
+function or(q,p){var pick=[],tries=0,o=sh(q.s.map(function(t,i){return{t:t,i:i}})),h=top("Zona "+(zi+1),p)+'<div class="card"><h2>'+q.q+'</h2>';
+o.forEach(function(x){h+='<button data-i="'+x.i+'">'+x.t+'</button>'});h+='<button class="pri" id="ck">Periksa urutan</button><button id="rs" class="sm">↺ Ulang</button><div id="fb"></div></div>';el(h);
+var bs=app.querySelectorAll("button[data-i]");
+function lab(){bs.forEach(function(b){var i=+b.dataset.i,n=pick.indexOf(i);b.textContent=(n>=0?(n+1)+". ":"")+q.s[i];b.classList.toggle("sel",n>=0)})}
+bs.forEach(function(b){b.onclick=function(){var i=+b.dataset.i;if(pick.indexOf(i)<0){pick.push(i);lab()}}});gid("rs").onclick=function(){pick=[];lab()};
+gid("ck").onclick=function(){if(pick.length<q.s.length)return;var ok=pick.every(function(v,i){return v==i});tries++;if(ok){zs+=tries==1?20:10;gid("ck").remove();gid("rs").remove();bs.forEach(function(b){b.disabled=true;b.classList.add("ok")});fbk(tries==1?"Urutan tepat pada percobaan pertama!":"Urutan tepat.",true)}else{gid("fb").innerHTML='<div class="fb">💡 Urutan belum tepat. Pikirkan dulu apa yang harus dilakukan lebih awal.</div>';pick=[];lab()}}}
+function boss(q){var sc=[0,0,0,0],h=top("Boss Battle",90)+'<div class="card"><h2>👑 Raja Pencitraan</h2><p>'+q.cs+'</p>';
+q.q.forEach(function(t,i){h+='<div><b>'+(i+1)+'.</b> '+t+'</div><textarea aria-label="Jawaban '+(i+1)+'"></textarea>'});
+h+='<button class="pri" id="rv">Lihat contoh jawaban unggul</button><div id="ex"></div></div>';el(h);
+gid("rv").onclick=function(){this.remove();var r='<div class="fb"><b>Contoh jawaban unggul (rujukan):</b><br>'+q.ex+'</div><h2 style="margin-top:12px">Nilai jawabanmu sendiri atau antar tim (1–4)</h2>';
+q.rub.forEach(function(t,i){r+='<div>'+t+'</div><div class="rub" data-r="'+i+'">'+[1,2,3,4].map(function(n){return'<button data-n="'+n+'">'+n+'</button>'}).join("")+'</div>'});
+r+='<button class="pri" id="bf" disabled>Selesai</button>';gid("ex").innerHTML=r;
+app.querySelectorAll(".rub").forEach(function(row){row.querySelectorAll("button").forEach(function(b){b.onclick=function(){row.querySelectorAll("button").forEach(function(x){x.classList.remove("sel")});b.classList.add("sel");sc[+row.dataset.r]=+b.dataset.n;gid("bf").disabled=sc.some(function(v){return!v})}})});
+gid("bf").onclick=function(){zs=sc.reduce(function(a,b){return a+b},0);zend()}}}
+function zend(){var z=Z[zi];
+if(zs>=z.pass){st.total+=zs;st.badges.push(z.lb);st.cur=zi+1;
+if(zi==3){return fin()}
+el('<div class="card"><div class="bg">🏅</div><h2 style="text-align:center">Zona selesai!</h2><p style="text-align:center">Skor zona: <b>'+zs+'</b> (syarat '+z.pass+')<br>Lencana <b>'+z.lb+'</b> dan Lentera Hati '+(zi+1)+' 🏮 diperoleh.</p><button class="pri" onclick="map()">Kembali ke peta</button></div>')}
+else{var hk=z.hk||"Baca kembali contoh jawaban unggul, lalu coba lagi dengan lebih teliti.";
+el('<div class="card"><h2>📖 Belum lulus zona</h2><p>Skor: <b>'+zs+'</b>, syarat <b>'+z.pass+'</b>. Pelajari dulu Kamar Hikmah, lalu ulangi zona.</p><p>'+hk+'</p><button class="pri" onclick="zone('+zi+')">Ulangi zona</button></div>')}}
+function fin(){var t=st.total,r=t>=175?"Pelita Berkah":t>=140?"Penjaga Cahaya":t>=105?"Penjelajah Hati":"Pelita Muda";
+el('<div class="card"><div class="bg">🕌✨</div><h2 style="text-align:center">Pelita Berkah menyala!</h2><p style="text-align:center">Total skor: <b>'+t+'</b> dari 206<br>Peringkat: <b>'+r+'</b></p><p class="mu" style="text-align:center">Lencana: '+st.badges.join(" · ")+'</p></div><div class="card"><h2>Janji Pelita (refleksi)</h2><p>Tulis 3 kalimat: (1) sifat yang paling sering mengintaiku, (2) satu kebiasaan baik yang akan kumulai minggu ini, (3) siapa yang akan mengingatkanku dengan santun.</p><textarea aria-label="Janji Pelita"></textarea><button class="pri" onclick="home()">Main lagi</button></div>')}
+home();
+</script>
+</body>
+</html>
